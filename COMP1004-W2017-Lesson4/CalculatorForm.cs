@@ -14,6 +14,9 @@ namespace COMP1004_W2017_Lesson4
 {
     public partial class CalculatorForm : Form
     {
+        // 3. create a reference to the previous form
+        public Form previousForm;
+
         // PRIVATE INSTANCE VARIABLES
         private string _operand1;
         private string _operand2;
@@ -69,6 +72,21 @@ namespace COMP1004_W2017_Lesson4
                     break;
                 case "Other":
                     break;
+            }
+        }
+
+        private void CalculatorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are You Sure?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                this.previousForm.Close();
+                //Program.MySplashForm.Close();
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
     }

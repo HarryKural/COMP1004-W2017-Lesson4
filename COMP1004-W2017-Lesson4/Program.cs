@@ -11,8 +11,8 @@ namespace COMP1004_W2017_Lesson4
         // declared public static form - Application GLOBAL
         public static SplashForm MySplashForm;
 
-        // declare public static form - Calculator Form
-        public static CalculatorForm MyCalculatorForm;
+        //// declare public static form - Calculator Form 
+        //public static CalculatorForm MyCalculatorForm; 1st
 
         /// <summary>
         /// The main entry point for the application.
@@ -25,7 +25,8 @@ namespace COMP1004_W2017_Lesson4
 
             // Initialize SplashForm and CalculatorForm
             Program.MySplashForm = new SplashForm();
-            Program.MyCalculatorForm = new CalculatorForm();
+
+            //Program.MyCalculatorForm = new CalculatorForm(); 1st
 
             Application.Run(Program.MySplashForm);
         }
