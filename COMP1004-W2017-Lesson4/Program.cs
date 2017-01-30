@@ -6,17 +6,28 @@ using System.Windows.Forms;
 
 namespace COMP1004_W2017_Lesson4
 {
-    static class Program
+    public static class Program
     {
+        // declared public static form - Application GLOBAL
+        public static SplashForm MySplashForm;
+
+        // declare public static form - Calculator Form
+        public static CalculatorForm MyCalculatorForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CalculatorForm());
+
+            // Initialize SplashForm and CalculatorForm
+            Program.MySplashForm = new SplashForm();
+            Program.MyCalculatorForm = new CalculatorForm();
+
+            Application.Run(Program.MySplashForm);
         }
     }
 }
